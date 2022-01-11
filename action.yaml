@@ -3,6 +3,11 @@ description: 'Test encoding github context'
 branding:
   icon: lock
   color: purple
+inputs:
+  github_context:
+    description: 'internal (do not set): the "github" context object in json'
+    required: true
+    default: ${{ toJSON(github) }}
 runs:
   using: 'composite'
   steps:
