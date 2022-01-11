@@ -1,0 +1,16 @@
+name: Test workflow
+
+on:
+  push:
+
+jobs:
+  build:
+    name: Test workflow
+    runs-on: ubuntu-20.04
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+
+      - name: Run 
+        uses: ./

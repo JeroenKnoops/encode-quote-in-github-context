@@ -1,0 +1,22 @@
+name: 'Test encoding github context'
+description: 'Test encoding github context'
+branding:
+  icon: lock
+  color: purple
+runs:
+  using: 'composite'
+  steps:
+    - name: compose arguments
+      id: compose-args
+      shell: bash
+      run: |
+        encoded_github="$(echo ${{ inputs.github_context }} | base64 -w 0)"
+        echo "Encoded github_context"
+        echo "${encoded_github}"
+
+        echo "-==============================================-"
+
+        decoded_github="${echo $encoded_github | base64 -d}"
+        echo "Decoded github_context"
+        echo "${decoded_github}"
+
