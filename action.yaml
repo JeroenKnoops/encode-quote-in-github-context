@@ -15,7 +15,7 @@ runs:
       id: compose-args
       shell: bash
       run: |
-        encoded_github="$(echo ${{ inputs.github_context }} | base64 -w 0)"
+        encoded_github="$(echo '${{ inputs.github_context }}' | base64 -w 0)"
         echo "Encoded github_context"
         echo "${encoded_github}"
 
