@@ -21,7 +21,7 @@ runs:
 
         echo "-==============================================-"
 
-        decoded_github="${echo $encoded_github | base64 -d}"
+        decoded_github="${echo '$encoded_github' | base64 -d}"
         echo "Decoded github_context"
         echo "${decoded_github}"
 
