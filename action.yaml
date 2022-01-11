@@ -15,7 +15,8 @@ runs:
       id: compose-args
       shell: bash
       run: |
-        echo ${{ inputs.github_context }} > github_context.json
+        echo "${{ inputs.github_context }}" > github_context.json
+        cat github_context.json
         encoded_github="$(cat github_context.json | base64 -w 0)"
         rm github_context.json
         echo "Encoded github_context"
